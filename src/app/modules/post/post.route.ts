@@ -21,5 +21,18 @@ router.patch(
     PostControllers.updatePost
 );
 
+router.delete(
+    "/:id",PostControllers.deletePost
+  );
+  router.get("/:id", PostControllers.getSinglePost);
+
+  router.post(
+    "/:id/vote",
+  
+    validateRequest(PostValidations.voteSchema),
+    PostControllers.vote
+  );
+  
+
 
 export const PostRoutes = router;

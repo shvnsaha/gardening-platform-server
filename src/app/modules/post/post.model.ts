@@ -16,6 +16,7 @@ const PostSchema: Schema = new Schema<TPost>(
     upvotedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],
     downvotedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],
     comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
+    isDeleted:{type:Boolean,default:false}
   },
   { timestamps: true }
 );

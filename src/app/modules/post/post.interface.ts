@@ -12,5 +12,6 @@ export type TPost = {
     upvotedBy: Types.ObjectId[];
     downvotedBy: Types.ObjectId[];
     comments?: Types.ObjectId[];
+    isDeleted?: boolean
   };
   
