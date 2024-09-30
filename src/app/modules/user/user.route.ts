@@ -13,11 +13,11 @@ router
     validateRequest(UserValidations.createUserValidationSchema),
     UserControllers.createUser,
   )
-//   .post(
-//     '/login',
-//     validateRequest(UserValidations.loginValidationSchema),
-//     UserControllers.loginUser,
-//   )
+  .post(
+    '/login',
+    validateRequest(UserValidations.loginValidationSchema),
+    UserControllers.loginUser,
+  )
 //   .get(
 //     '/users',
 //     UserControllers.getAllUsers,
