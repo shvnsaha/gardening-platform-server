@@ -3,7 +3,7 @@ import notFound from './app/middlewares/notFound'
 import globalErrorHandler from './app/middlewares/globalErrorhandler'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-// import router from './app/routes'
+import router from './app/routes'
 
 const app: Application = express()
 
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 // application routes
-// app.use('/api', router)
+app.use('/api', router)
 
 app.use(globalErrorHandler)
 

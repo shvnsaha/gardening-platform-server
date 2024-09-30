@@ -1,4 +1,4 @@
-#  Instructions on how to run the application locally
+<!-- #  Instructions on how to run the application locally
 
 # Step 1 :
 At first clone the above git repository using git clone command.
@@ -88,4 +88,4 @@ If all are working well you see Example app listening on port 5000 in your conso
 5. JWT
 6. Bcrypt
 7. Zod Validation
-
+ -->
