@@ -9,6 +9,7 @@ const userSchema = new Schema<TUser, UserModel>(
     email: { type: String, required: true },
     password: { type: String, required: true, select: 0  },
     phone: { type: String, required: true },
+    profileImg:{type: String},
     role: {
       type: String,
       enum: {

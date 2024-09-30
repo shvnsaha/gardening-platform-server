@@ -51,8 +51,18 @@ const createUserValidationSchema = z.object({
 })
 
 
+const updateUserValidationSchema = z.object({
+  body: z.object({
+    name: z.string().optional(),
+    profileImg: z.string().optional(),
+    phone: z.string().optional(),
+    isVerified: z.boolean().optional(),
+  }),
+});
+
 
 
 export const UserValidations = {
   createUserValidationSchema,
+  updateUserValidationSchema
 }
