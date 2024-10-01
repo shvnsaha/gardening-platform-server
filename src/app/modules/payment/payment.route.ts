@@ -1,8 +1,9 @@
 import { Router } from 'express';
+import { paymentControler } from './payment.controller';
 
 
 const router = Router();
 
-router.post('/confirmation', Pay.confirmationController);
+router.post('/confirmation', paymentControler.confirmationController);
 
 export const paymentRoutes = router;
