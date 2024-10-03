@@ -5,14 +5,16 @@ import { PostValidations } from "./post.validation";
 import { PostControllers } from "./post.controller";
 
 
+
 const router = express.Router();
 
 router.post(
-    "/create-post",
-
-    validateRequest(PostValidations.createPostSchema),
+    "/",
+    // validateRequest(PostValidations.createPostSchema),
     PostControllers.createPost
 );
+
+router.get("/user/:id", PostControllers.getPostsByUser);
 
 router.patch(
     "/update-post/:id",
@@ -25,10 +27,10 @@ router.delete(
     "/:id",PostControllers.deletePost
   );
   router.get("/:id", PostControllers.getSinglePost);
+  router.get("/user/:id",PostControllers.getPostsByUser)
 
   router.post(
-    "/:id/vote",
-  
+    "/vote/:id",
     validateRequest(PostValidations.voteSchema),
     PostControllers.vote
   );

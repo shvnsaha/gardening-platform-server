@@ -8,7 +8,6 @@ const userSchema = new Schema<TUser, UserModel>(
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true, select: 0  },
-    phone: { type: String, required: true },
     profileImg:{type: String},
     role: {
       type: String,
@@ -16,10 +15,9 @@ const userSchema = new Schema<TUser, UserModel>(
         values: ['user', 'admin'],
         message: '{VALUE} is not valid',
       },
-      required: true,
+      default: 'user'
     },
-    status:{type:String,default: 'basic'},
-    expireDate:{type:Number,default:Date.now()},
+    isVerified:{type:Boolean,default: false},
     followers :[{type:mongoose.Schema.Types.ObjectId, ref: 'User'}],
     followings :[{type:mongoose.Schema.Types.ObjectId, ref: 'User'}],
     posts : [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],

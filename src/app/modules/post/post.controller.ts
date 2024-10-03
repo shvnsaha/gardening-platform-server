@@ -34,6 +34,19 @@ const createPost = catchAsync(async (req, res) => {
     });
   });
 
+
+  const getPostsByUser = catchAsync(async (req, res) => {
+    const result = await PostServices.getPostsByUserFromDB(req.params.id);
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.OK,
+      message: "User Posts retrieved successfully",
+      data: result,
+    });
+  });
+  
+
+
   const getSinglePost = catchAsync(async (req, res) => {
     const result = await PostServices.getSinglePostFromDB(req.params.id);
     sendResponse(res, {
@@ -73,5 +86,6 @@ const createPost = catchAsync(async (req, res) => {
     updatePost,
     deletePost,
     getSinglePost,
+    getPostsByUser,
     vote
   }

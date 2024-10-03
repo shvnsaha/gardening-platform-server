@@ -6,8 +6,8 @@ const createPostSchema = z.object({
     content: z.string().min(1),
     author: z.string({ required_error: "Author is required" }),
     category: z.string(),
-    isPremium: z.boolean(),
-    images: z.array(z.string().url()),
+    isPremium: z.boolean().optional(),
+    images: z.string(),
   }),
 });
 

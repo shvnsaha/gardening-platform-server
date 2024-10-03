@@ -26,27 +26,6 @@ const createUserValidationSchema = z.object({
       })
       .min(6, 'Password must be at least 6 characters long')
       .max(50, 'Password cannot exceed 50 characters'),
-
-    phone: z
-      .string({
-        required_error: 'Phone is required',
-        invalid_type_error: 'Phone must be a string',
-      })
-      .min(6, 'Phone must be at least 6 characters long')
-      .max(15, 'Phone cannot exceed 15 characters'),
-
-    address: z
-      .string({
-        required_error: 'Address is required',
-        invalid_type_error: 'Email must be a string',
-      })
-      .min(10, 'Address must be at least 1 characters long')
-      .max(100, 'Address cannot exceed 100 characters'),
-
-    role: z.enum(['user', 'admin'], {
-      required_error: 'Role is required',
-      invalid_type_error: "Role must be either 'user' or 'admin'",
-    }),
   }),
 })
 

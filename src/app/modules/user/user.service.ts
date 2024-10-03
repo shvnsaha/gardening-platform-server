@@ -5,8 +5,8 @@ import { TUser } from "./user.interface";
 import { User } from "./user.model";
 import { initiatePayment } from "../payment/payment.utils";
 
-const getSingleUserFromDB = async (email: string) => {
-  const result = await User.findOne({ email });
+const getSingleUserFromDB = async (id:string) => {
+  const result = await User.findById(id);
   return result;
 };
 
@@ -44,7 +44,6 @@ const verifyUser = async (id: string) => {
     totalAmount: "1200",
     customerName: user.name,
     customerEmail: user.email,
-    customerPhone: user.phone,
   };
   console.log(paymentData);
 

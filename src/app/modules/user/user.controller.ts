@@ -5,7 +5,7 @@ import { UserServices } from "./user.service";
 
 
 const getSingleUser = catchAsync(async (req, res) => {
-    const result = await UserServices.getSingleUserFromDB(req.params.email);
+    const result = await UserServices.getSingleUserFromDB(req.params.id);
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.OK,

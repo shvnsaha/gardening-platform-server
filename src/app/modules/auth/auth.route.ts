@@ -18,5 +18,4 @@ router
     AuthControllers.loginUser,
   )
 
-
 export const AuthRoutes = router

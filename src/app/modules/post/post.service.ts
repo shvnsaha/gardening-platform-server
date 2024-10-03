@@ -37,11 +37,19 @@ const getSinglePostFromDB = async (id: string): Promise<TPost | null> => {
   return result;
 };
 
+const getPostsByUserFromDB = async (userId: string) => {
+  const result = await Post.find({ author: userId })
+    .populate("author")
+    .sort({ createdAt: -1 });
+  return result;
+};
+
+
 const voteInPost = async (
   postId: string,
   userId: string,
   voteType: "upvote" | "downvote"
-): Promise<TPost | null> => {
+) => {
   const post = await Post.findById(postId);
   if (!post) return null;
 
@@ -93,5 +101,6 @@ export const PostServices = {
   updatePostIntoDB,
   deletePostFromDB,
   getSinglePostFromDB,
+  getPostsByUserFromDB,
   voteInPost
 }
